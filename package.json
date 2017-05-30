@@ -1,0 +1,32 @@
+{
+  "name": "spike-react-native",
+  "version": "0.0.1",
+  "description": "A basic todo application in React Native",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oshalygin/spike-react-native.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "spike"
+  ],
+  "author": "oleg shalygin <oshalygin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oshalygin/spike-react-native/issues"
+  },
+  "homepage": "https://github.com/oshalygin/spike-react-native#readme",
+  "dependencies": {
+    "babel-eslint": "4.1.6",
+    "eslint": "1.10.3",
+    "eslint-config-airbnb": "2.1.1",
+    "eslint-plugin-react": "3.12.0",
+    "react-native": "0.19.0",
+    "react-native-swipeout": "2.0.12",
+    "redux": "3.3.1"
+  }
+}
