@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "A basic todo application in React Native",
   "scripts": {
-    "test": "test"
+    "lint": "esw app utilities --color --ext .js --ext .jsx",
+    "lint:watch": "npm run lint -- --watch",
+    "start": "react-native start",
+    "test": "jest --silent",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -22,11 +26,39 @@
   "homepage": "https://github.com/oshalygin/spike-react-native#readme",
   "dependencies": {
     "babel-eslint": "4.1.6",
-    "eslint": "1.10.3",
+    "eslint": "3.19.0",
     "eslint-config-airbnb": "2.1.1",
     "eslint-plugin-react": "3.12.0",
     "react-native": "0.19.0",
     "react-native-swipeout": "2.0.12",
     "redux": "3.3.1"
+  },
+  "jest": {
+    "testRegex": ".*?(\\.spec).js",
+    "transformIgnorePatterns": [
+      "node_modules"
+    ],
+    "collectCoverageFrom": [
+      "client/**/*.js",
+      "client/**/*.jsx",
+      "server/**/*.js*"
+    ],
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest/build/index.js"
+    },
+    "setupFiles": [
+      "./utilities/testSetup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/utilities/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
+    "coverageReporters": [
+      "json",
+      "html",
+      "text",
+      "lcov",
+      "clover"
+    ]
   }
 }
